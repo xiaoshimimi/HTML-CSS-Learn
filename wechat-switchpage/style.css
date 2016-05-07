@@ -1,8 +1,37 @@
-html,body{height:100%;overflow-x:hidden}
-.wrap {height:100%;overflow:hidden}
-.wrap .inner{position:relative;height:400%;top:0;transition:top 0.3s ease;-webkit-transition:top 0.3s ease;-moz-transition:top 0.3s ease;-ms-transition:top 0.3s ease;-o-transition:top 0.3s ease}
+html,body{
+  height:100%;
+  overflow-x:hidden;
+}
+.wrap {
+  height:100%;
+  overflow:hidden;
+}
+.wrap .inner{
+  position:relative;
+  height:400%;
+  top:0;
+  transition:top 0.3s ease;
+  -webkit-transition:top 0.3s ease;
+  -moz-transition:top 0.3s ease;
+  -ms-transition:top 0.3s ease;
+  -o-transition:top 0.3s ease;
+}
 .wrap .inner.b{top:-100%}
 .wrap .inner.c{top:-200%}
 .wrap .inner.d{top:-300%}
-.wrap .first,.wrap .second,.wrap .third,.wrap .forth{position:relative;height:25%}
-.wrap .inner .clickme{position:absolute;width:100%;height:40px;bottom:0;left:0;text-align:center; border-top: grey dotted 1px}
+.wrap .first,
+.wrap .second,
+.wrap .third,
+.wrap .forth{
+  position:relative;
+  height:25%;
+}
+.wrap .inner .clickme{
+  position:absolute;
+  width:100%;
+  height:40px;
+  bottom:0;
+  left:0;
+  text-align:center; 
+  border-top: grey dotted 1px;
+}
