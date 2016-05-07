@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>学习H5翻页</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+<div class="wrap">
+	<div id='inner' class='inner'>
+		<div class='first'>123 <div id='a2b' class='clickme'>click me</div></div>
+		<div class='second'>345 <div id='b2c' class='clickme'>click me</div></div>
+		<div class='third'>567 <div id='c2d' class='clickme'>click me</div></div>
+		<div class='forth'>789 </div>
+	</div>
+</div>
+<script type="text/javascript">
+	var touch_click = 'click';
+	function hasClass(obj, cls) {return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));}
+	function addClass(obj, cls) {
+        if (!hasClass(obj, cls)) {
+            var addVal = (obj.className)?' '+cls:cls;
+            obj.className += addVal;
+        }
+    }
+    function removeClass(obj, cls) {
+        if (hasClass(obj, cls)) {
+            var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+            obj.className = obj.className.replace(reg, '');
+        }
+    }
+    var slideSwitch = {
+        a2b: function(){
+            addClass(document.getElementById('inner'), 'b');
+        },
+        b2c: function(){
+            removeClass(document.getElementById('inner'), 'b');
+            addClass(document.getElementById('inner'), 'c');
+        },
+        c2d: function(){
+            removeClass(document.getElementById('inner'), 'c');
+            addClass(document.getElementById('inner'), 'd');
+        },
+        b2a: function(){
+            removeClass(document.getElementById('inner'), 'b');
+
+        },
+        c2b: function(){
+            removeClass(document.getElementById('inner'), 'c');
+            addClass(document.getElementById('inner'), 'b');
+        },
+        d2c: function(){
+            removeClass(document.getElementById('inner'), 'd');
+            addClass(document.getElementById('inner'), 'c');
+        }
+    }
+
+    document.getElementById('a2b').addEventListener(touch_click, function(){
+        slideSwitch.a2b();
+    });
+    document.getElementById('b2c').addEventListener(touch_click, function(){
+        slideSwitch.b2c();
+    });
+    document.getElementById('c2d').addEventListener(touch_click, function(){
+        slideSwitch.c2d();
+    });
+</script>
+
+</body>
+</html>
